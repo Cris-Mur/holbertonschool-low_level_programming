@@ -7,12 +7,12 @@
  */
 int main(void)
 {
-	for (char c = 48; c <= 102; c++)
+	for (char n = 48; n <= 57; n++)
 	{
-		if (c == 57)
-		{
-			c = 97;
-		}
+		putchar(n);
+	}
+	for (char c = 57; c <= 102; c++)
+	{
 		putchar(c);
 	}
 	putchar('\n');
