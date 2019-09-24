@@ -25,13 +25,13 @@ void times_table(void)
 				_putchar((result / 10) + 48);
 				_putchar((result % 10) + 48);
 			}
-			if (((fila + 1)*(colum)) < 10 && fila != 9)
+			if (((fila + 1) * (colum)) < 10 && fila != 9)
 			{
 				_putchar(44);
 				_putchar(32);
 				_putchar(32);
 			}
-			else if (((fila + 1)*(colum)) >= 10 && fila != 9)
+			else if (((fila + 1) * (colum)) >= 10 && fila != 9)
 			{
 				_putchar(44);
 				_putchar(32);
