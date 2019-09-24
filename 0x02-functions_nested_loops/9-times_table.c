@@ -10,9 +10,9 @@ void times_table(void)
 {
 	int colum, fila;
 
-	for (int colum = 0; colum <= 9; colum++)
+	for (colum = 0; colum <= 9; colum++)
 	{
-		for (int fila = 0; fila <= 9; fila++)
+		for (fila = 0; fila <= 9; fila++)
 		{
 			int result = colum * fila;
 
