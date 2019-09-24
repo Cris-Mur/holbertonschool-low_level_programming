@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include "1-alphabet.c"
 
 /**
  * print_alphabet_x10 - lowercase alphabet 10 times
@@ -11,10 +12,6 @@ void print_alphabet_x10(void)
 
 	for (int j = 0; j <= 10; j++)
 	{
-		for (char c = 97; c <= 122; c++)
-		{
-			_putchar(c);
-		}
-		_putchar('\n');
+		print_alphabet();
 	}
 }
