@@ -11,9 +11,7 @@ int main(void)
 
 	for (int i = 0; i <= 9; i++)
 	{
-		char c = str[i];
-
-		_putchar(c);
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 	return (0);
