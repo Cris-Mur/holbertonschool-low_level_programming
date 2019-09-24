@@ -1,19 +1,19 @@
 #include "holberton.h"
 
 /**
- * print_alphabet_x10 - dispays lowercase alphabet
+ * print_alphabet_x10 - dispays lowercase alphabet 10 times
  *
- * Return: void function
+ * Return:
  */
 void print_alphabet_x10(void)
 {
-	char c[26] = "abcdefghijklmnopqrstuvwxyz";
+
 
 	for (int j = 0; j <= 10; j++)
 	{
-		for (int i = 0; i <= 26; i++)
+		for (char c = 97; c <= 122; c++)
 		{
-			_putchar(c[i]);
+			_putchar(c);
 		}
 		_putchar('\n');
 	}
