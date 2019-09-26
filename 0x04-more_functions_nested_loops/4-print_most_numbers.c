@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_most_numbers
+ * print_most_numbers - print numbers without two
  *
  * Return: void
  */

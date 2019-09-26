@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * void more_numbers - print numbers
+ * more_numbers - print numbers
  *
  * Return: void
  */
@@ -16,8 +16,22 @@ void more_numbers(void)
 		{
 			if (num >= 10)
 			{
-				_putchar((num / 10) + 48);
-				_putchar((num % 10) + 48);
+				int orf;
+
+				for (orf = 0; orf < 2; orf++)
+				{
+					int r;
+
+					if (orf == 0)
+					{
+						r = num / 10;
+					}
+					else if (orf == 1)
+					{
+						r = num % 10;
+					}
+					_putchar(r + 48);
+				}
 			}
 			else
 				_putchar(num + 48);
