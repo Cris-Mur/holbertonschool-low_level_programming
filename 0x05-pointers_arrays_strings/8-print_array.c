@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * print_array
+ * print_array - print data of array
  * @a: input array
  * @n: input size of array
  * Return: void
