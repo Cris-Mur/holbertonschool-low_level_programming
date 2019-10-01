@@ -10,16 +10,14 @@
 void rev_string(char *s)
 {
 	printf("%p\n", &*s);
-	int i;
+	int i = 0;
 
-	i = 0;
 	while (s[i] != 00)
 	{
 		i++;
 	}
-	int j;
+	int j = 0;
 
-	j = 0;
 	char c[i];
 
 	while (s[j] != 00)
