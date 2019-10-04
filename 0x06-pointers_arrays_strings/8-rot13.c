@@ -8,18 +8,19 @@
 
 char *rot13(char *s)
 {
-	int i, ki1;
+	int i, oi;
 
-	char key1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char key2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char ori[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char key[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; s[i] != 00; i++)
 	{
-		for (ki1 = 0; key1[ki1] != 00; ki1++)
+		for (oi = 0; ori[oi] != 00; oi++)
 		{
-			if (s[i] == key1[ki1])
+			if (s[i] == ori[oi])
 			{
-				s[i] = key2[ki1];
+				s[i] = key[oi];
+				break;
 			}
 		}
 	}
