@@ -18,7 +18,7 @@ char *leet(char *s)
 		{
 			if (s[i] == dif[di])
 			{
-				s[i] = key[di/2];
+				s[i] = key[di / 2];
 				break;
 			}
 		}
