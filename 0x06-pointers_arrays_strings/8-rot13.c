@@ -8,17 +8,19 @@
 
 char *rot13(char *s)
 {
-	int i;
+	int i, ki1;
+
+	char key1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char key2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; s[i] != 00; i++)
 	{
-		if ((s[i] >= 65 && s[i] <= 77) || (s[i] >= 97 && s[i] <= 109))
+		for (ki1 = 0; key1[ki1] != 00; ki1++)
 		{
-			s[i] = s[i] + 13;
-		}
-		else if ((s[i] >= 78 && s[i] <= 90) || (s[i] >= 110 && s[i] <= 122))
-		{
-			s[i] = s[i] - 13;
+			if (s[i] == key1[ki1])
+			{
+				s[i] = key2[ki1];
+			}
 		}
 	}
 	return (s);
