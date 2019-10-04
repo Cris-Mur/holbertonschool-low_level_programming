@@ -13,11 +13,19 @@ char *cap_string(char *s)
 
 	for (i = 0; s[i] != 00; i++)
 	{
-		for (j = 0; s[i] == dif[j]; j++)
+		if (i == 0 && s[i] >= 97 && s[i] <= 122)
 		{
-			if (s[i+1] >= 97 && s[i+1] <= 122)
+			s[i] = s[i] - 32;
+		}
+
+		for (j = 0; dif[j] != 00; j++)
+		{
+			if (s[i] == dif[j])
 			{
-				s[i+1] = s[i+1] - 32;
+				if (s[i+1] >= 97 && s[i+1] <= 122)
+				{
+					s[i+1] = s[i+1] - 32;
+				}
 			}
 		}
 	}
