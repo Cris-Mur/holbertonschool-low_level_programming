@@ -10,7 +10,7 @@ char *leet(char *s)
 {
 	int i, di;
 	char dif[] = {97, 65, 101, 69, 111, 79, 116, 84, 108, 76};
-	int key[] = {52, 51, 48, 55, 49};
+	int  key[] = {52, 52, 51, 51, 48, 48, 55, 55, 49, 49};
 
 	for (i = 0; s[i] != 0; i++)
 	{
@@ -18,7 +18,7 @@ char *leet(char *s)
 		{
 			if (s[i] == dif[di])
 			{
-				s[i] = key[di / 2];
+				s[i] = key[di];
 				break;
 			}
 		}
