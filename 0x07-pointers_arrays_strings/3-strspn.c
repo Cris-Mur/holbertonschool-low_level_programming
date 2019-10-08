@@ -3,28 +3,27 @@
 /**
  * _strspn - count bytes to mach
  * @s: string to input
- * @acept: string to search
+ * @accept: string to search
  * Return: number of bytes
  */
 
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int m;
-	int i, j, n;
+	int i;
 
-	m = 0;
-
-	for (n = 0; accept[n] != 00; n++)
-	{
-	}
-	for (j = 0; j <= n; j++)
+	for (m = 0; s[m]; m++)
 	{
 		for (i = 0; accept[i] != 00; i++)
 		{
-			if (s[j] == accept[i])
+			if (s[i] == accept[i])
 			{
-				m++;
+				break;
 			}
+		}
+		if (!accept[i])
+		{
+			break;
 		}
 	}
 	return (m);
