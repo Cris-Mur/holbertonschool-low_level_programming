@@ -19,8 +19,8 @@ int main(void)
 				{
 					int sum1, sum2;
 
-					sum1 = n1 + n2;
-					sum2 = n3 + n4;
+					sum1 = ((n1 - 48) * 10) + (n2 - 48);
+					sum2 = ((n3 - 48) * 10) + (n4 - 48);
 
 					if (sum1 < sum2)
 					{
