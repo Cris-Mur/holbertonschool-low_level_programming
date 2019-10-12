@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
  * print_times_table - print n times table
  * @n: input parameter
@@ -14,19 +14,23 @@ void print_times_table(int n)
 	{
 		for (x = 0; x <= n; x++)
 		{
-			printf("%d", (x * y);
-			       if (x != n)
-			       {
-				       if ((x * (y + 1)) < 10)
-				       {
-					       printf(",   ");
-				       }
-				       else if ((x * (y + 1)) > 10)
-				       {
-					       if ((x * (y + 1) < 100)
-						       {
-							       printf(",  ");
-						       }
-						       if ((x * (y + 1) > 100)
-							       {
-								       printf(", ");
+			printf("%d", (x * y));
+			if (x != n)
+			{
+				if (y * (x + 1) <= 9)
+				{
+					printf(",   ");
+				}
+				else if (y * (x + 1) < 100)
+				{
+					printf(",  ");
+				}
+				else if (y * (x + 1) >= 100)
+				{
+					printf(", ");
+				}
+			}
+		}
+		printf("\n");
+	}
+}
