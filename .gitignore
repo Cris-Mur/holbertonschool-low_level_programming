@@ -1,0 +1,8 @@
+# Emacs backup files
+*~
+
+# main files
+*-main.c
+
+#_putchar file
+*_putchar.c
