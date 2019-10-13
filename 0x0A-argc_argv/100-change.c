@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * main - change money
  * @argc: cant of agruments
@@ -9,19 +9,20 @@
 
 int main(int argc, char *argv[])
 {
-	int coins[5] = {1, 2, 5, 10, 25}, i, ch;
+	int coins[5] = {25, 10, 5, 2, 1}, i, ch, io;
+	io = atoi(argv[1]);
 	if (argc == 2)
 	{
 		for(i = 0; i < 6; i++)
 		{
-			if (*argv[1] > 0)
+			if (io > 0)
 			{
-				if (*argv[1] >= coins[i])
+				if (io >= coins[i])
 				{
-					if (*argv[i]/coins[i] < 10)
+					if (io/coins[i] < 10)
 					{
-						ch = argv[1] / coins[i];
-						ch = ch + (argv[1] % coins[i]);
+						ch = io / coins[i];
+						ch = ch + (io % coins[i]);
 						printf("%d\n",ch);
 						return (0);
 					}
