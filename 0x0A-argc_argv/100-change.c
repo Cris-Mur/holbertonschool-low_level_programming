@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 			{
 				if (io >= coins[i])
 				{
-					if (io / coins[i] < 10)
+					if (io / coins[i] <= 10)
 					{
 						ch = io / coins[i];
 						ch = ch + (io % coins[i]);
@@ -36,4 +36,5 @@ int main(int argc, char *argv[])
 		printf("Error");
 		return (1);
 	}
+	return (0);
 }
