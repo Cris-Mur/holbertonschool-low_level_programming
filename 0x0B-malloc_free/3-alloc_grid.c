@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdlib.h>
 
 /**
  * alloc_grid - matrix integer
@@ -18,9 +17,21 @@ int **alloc_grid(int width, int height)
 		for (y = 0; y < height; y++)
 		{
 			matrix[y] = malloc(width * sizeof(int));
-			for (x = 0; x < width; x++)
+			if (matrix[y] != NULL)
 			{
-				matrix[y][x] = 0;
+				for (x = 0; x < width; x++)
+				{
+					matrix[y][x] = 0;
+				}
+			}
+			else
+			{
+				for (y--; y >= 0; y--)
+				{
+					free(matrix[y]);
+				}
+				free(matrix);
+				return NULL;
 			}
 		}
 	}
