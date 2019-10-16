@@ -1,8 +1,9 @@
 #include "holberton.h"
 
 /**
- * free_grid -
- *
+ * free_grid - freedom grid
+ * @grid: input matrix
+ * @height: height of matrix
  * Return: void
  */
 void free_grid(int **grid, int height)
@@ -16,10 +17,5 @@ void free_grid(int **grid, int height)
 			free(grid[h]);
 		}
 	}
-	else
-	{
-		return;
-	}
 	free(grid);
-	return;
 }
