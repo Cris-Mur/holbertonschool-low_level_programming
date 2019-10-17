@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <string.h>
+
 /**
  * string_nconcat - concatenate n times
  * @s1: input string
@@ -16,9 +16,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 	}
 
-	new = malloc(size + (n + 1));
+	new = malloc(size + (n + 1) * sizeof(char *));
 	if (new == NULL)
 	{
+		free(new);
 		return (00);
 	}
 
@@ -38,5 +39,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		new[size] = s2[i];
 	}
+	new[size] = 00;
 	return (new);
 }
