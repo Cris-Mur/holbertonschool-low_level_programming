@@ -14,7 +14,7 @@ int main(void)
 	n1 = 0;
 	n2 = 1;
 
-	for (i = 2; i <= 50; i++)
+	for (i = 2; i <= 51; i++)
 	{
 		aux = n2;
 		n2 = n2 + n1;
