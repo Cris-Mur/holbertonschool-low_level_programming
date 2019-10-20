@@ -10,7 +10,7 @@ void print_times_table(int n)
 {
 	int x, y, mul;
 
-	if (n > 0 && n < 15)
+	if (n >= 0 && n < 15)
 	{
 		for (y = 0; y <= n; y++)
 		{
@@ -38,6 +38,14 @@ void print_times_table(int n)
 		}
 	}
 }
+
+/**
+ * spaces - funtion print coma and spaces
+ * @x: is a input number
+ * @y: other imput number that is multiply with x
+ * @n: input size of the grid
+ * Return: void funtion
+ */
 void spaces(int x, int y, int n)
 {
 	if (x != n)
