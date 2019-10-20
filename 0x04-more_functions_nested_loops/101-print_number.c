@@ -20,6 +20,11 @@ void print_number(int n)
 		_putchar(48);
 		return;
 	}
+	else if (n < 10)
+	{
+		_putchar(n + 48);
+		return;
+	}
 	while (n / mod > 9)
 	{
 		mod = mod * 10;
