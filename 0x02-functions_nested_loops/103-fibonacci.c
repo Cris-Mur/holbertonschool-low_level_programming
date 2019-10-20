@@ -9,7 +9,6 @@
 int main(void)
 {
 	int long n1, n2, aux, add;
-	int i;
 
 	n1 = 0;
 	add = 0;
