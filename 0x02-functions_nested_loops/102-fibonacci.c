@@ -19,7 +19,7 @@ int main(void)
 		aux = n2;
 		n2 = n2 + n1;
 		n1 = aux;
-		if (i < 50)
+		if (i < 51)
 		{
 			printf("%lu, ", n2);
 		}
