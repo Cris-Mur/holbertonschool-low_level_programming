@@ -6,3 +6,6 @@
 
 #_putchar file
 *_putchar.c
+
+# liball .c files
+*allfiles.a
