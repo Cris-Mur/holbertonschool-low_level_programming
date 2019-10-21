@@ -1,7 +1,7 @@
 #include "dog.h"
 
 /**
- * 1-init_dog - set things in dog struct
+ * init_dog - set things in dog struct
  * @d: pointer to struct
  * @name: set part of struct dog
  * @age: set part age  in struct
@@ -11,7 +11,10 @@
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	d -> name = name;
-	d -> age = age;
-	d -> owner = owner;
+	if (d)
+	{
+		d->name = name;
+		d->age = age;
+		d->owner = owner;
+	}
 }

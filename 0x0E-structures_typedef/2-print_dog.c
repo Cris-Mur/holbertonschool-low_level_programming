@@ -19,12 +19,7 @@ void print_dog(struct dog *d)
 			printf("(nil)\n");
 
 		printf("Age: ");
-		if (d -> age >= 0.0000)
-		{
-			printf("%f\n", d -> age);
-		}
-		else
-			printf("(nil)\n");
+		printf("%f\n", d -> age);
 
 		printf("Owner: ");
 		if (d -> owner)
@@ -33,5 +28,9 @@ void print_dog(struct dog *d)
 		}
 		else
 			printf("(nil\n)");
+	}
+	else
+	{
+		return;
 	}
 }
