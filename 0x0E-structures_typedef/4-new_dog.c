@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <string.h>
 
 /**
  * new_dog - funtion that create
@@ -16,7 +17,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (!doge)
 		return (NULL);
 	doge->name = malloc(strlen(name) + 1);
-	if (doge.name)
+	if (doge->name)
 	{
 		doge->name = name;
 	}
@@ -36,4 +37,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 	doge->age = age;
 	return (doge);
 
+}
+
+/**
+ * free_dog - free structure
+ * @d: structure
+ */
+
+void free_dog(dog_t *d)
+{
+        if (d)
+        {
+                free(d->name);
+                free(d->owner);
+                free(d);
+        }
 }
