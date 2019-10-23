@@ -2,7 +2,8 @@
 
 /**
  * print_name - pointer to funtion print name
- *
+ * @name: input string
+ * @f: pointer to funtion
  * Return: void
  */
 void print_name(char *name, void (*f)(char *))
@@ -11,5 +12,4 @@ void print_name(char *name, void (*f)(char *))
 	{
 		f(name);
 	}
-	return;
 }
