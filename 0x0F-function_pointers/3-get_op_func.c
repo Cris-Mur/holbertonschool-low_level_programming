@@ -4,8 +4,6 @@
 /**
  * get_op_func - select which funtion will use
  * @s: input string
- * @a: input number
- * @b: input number
  * Return: pointer to funtion
  */
 
