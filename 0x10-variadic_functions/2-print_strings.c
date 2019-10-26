@@ -28,10 +28,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			printf("%s", separator);
 		}
-		else
-		{
-			putchar(10);
-		}
 	}
+	putchar(10);
 	va_end(list);
 }
