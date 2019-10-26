@@ -5,6 +5,12 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+typedef struct coso
+{
+	char simbol;
+	void (*fn)(va_list list);
+}cosito;
+
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
