@@ -1,20 +1,4 @@
 #include "lists.h"
-/**
- * sizesito - funtion that conunt string
- * @str: input string
- * Return: size of string
- */
-
-unsigned int sizesito(const char *str)
-{
-	size_t n;
-
-	for (n = 0; str[n]; n++)
-	{
-	}
-
-	return (n);
-}
 
 /**
  * add_node_end - add in the end of list
@@ -25,29 +9,33 @@ unsigned int sizesito(const char *str)
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new;
-	list_t *temp = *head;
+	size_t n;
+	list_t *temp;
+
+	temp = *head;
+
+	for (n = 0; str[n]; n++)
+		;
 
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
-	{
 		return (NULL);
-	}
-	if (temp != NULL)
+
+	new->str = strdup(str);
+	new->next = NULL;
+
+	if (*head == NULL)
 	{
-		new->str = strdup(str);
-		new->len = sizesito(str);
-		while (temp->next != NULL)
+		*head = new;
+	}
+	else
+	{
+		while (temp->next != 0)
 		{
 			temp = temp->next;
 		}
 		temp->next = new;
 	}
-	else
-	{
-		new->str = strdup(str);
-		new->len = sizesito(str);
-		new->next = *head;
-		*head = new;
-	}
+	new->len = n;
 	return (*head);
 }
