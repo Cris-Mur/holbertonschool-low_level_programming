@@ -6,7 +6,7 @@
  * Return: size of string
  */
 
-size_t sizesito(char *str)
+unsigned int sizesito(const char *str)
 {
 	size_t n;
 
@@ -38,7 +38,7 @@ list_t *add_node(list_t **head, const char *str)
 		free(new);
 		return(NULL);
 	}
-	new->len = strlen(str);
+	new->len = sizesito(str);
 	new->next = *head;
 	*head = new;
 	return (*head);
