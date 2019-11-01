@@ -1,6 +1,20 @@
 #include "lists.h"
 
 /**
+ * sizesito - this count length
+ * @str: input string
+ * Return: size of string
+ */
+
+size_t sizesito(char *str)
+{
+	size_t n;
+
+	for (n = 0; str[n] != 00; n++);
+
+	return (n);
+}
+/**
  * add_node - generate a new nodo and add in the list
  * @head: list to modify
  * @str: input string
@@ -15,7 +29,15 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	new->str = strdup(str);
+	if (str != NULL)
+	{
+		new->str = strdup(str);
+	}
+	else
+	{
+		free(new);
+		return(NULL);
+	}
 	new->len = strlen(str);
 	new->next = *head;
 	*head = new;
