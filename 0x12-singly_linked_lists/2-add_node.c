@@ -10,7 +10,9 @@ unsigned int sizesito(const char *str)
 {
 	size_t n;
 
-	for (n = 0; str[n] != 00; n++);
+	for (n = 0; str[n] != 00; n++)
+	{
+	}
 
 	return (n);
 }
@@ -36,7 +38,7 @@ list_t *add_node(list_t **head, const char *str)
 	else
 	{
 		free(new);
-		return(NULL);
+		return (NULL);
 	}
 	new->len = sizesito(str);
 	new->next = *head;
