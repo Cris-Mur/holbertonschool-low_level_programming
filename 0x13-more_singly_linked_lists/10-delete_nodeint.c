@@ -2,13 +2,15 @@
 
 /**
  * delete_nodeint_at_index - delete in the middle id list
- *
+ * @head: input linked list
+ * @index: number of iterations in the list
  * Return: updated list
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *temp = *head;
 	listint_t *coso = NULL;
+
 	if (*head != NULL)
 	{
 		if (index > 0)

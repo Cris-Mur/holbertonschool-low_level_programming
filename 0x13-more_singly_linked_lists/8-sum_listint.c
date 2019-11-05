@@ -2,7 +2,7 @@
 
 /**
  * sum_listint - sum all values of linked list
- *
+ * @head: inut liked list
  * Return: resuld of add all values
  */
 int sum_listint(listint_t *head)

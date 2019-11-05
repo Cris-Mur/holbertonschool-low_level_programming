@@ -2,13 +2,16 @@
 
 /**
  * insert_nodeint_at_index - insert in the middle of the list
- *
+ * @head: input linked list
+ * @idx: number of iterarion in the list
+ * @n: data of the new node
  * Return: updated list
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *temp = *head;
 	listint_t *new;
+
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 	{
