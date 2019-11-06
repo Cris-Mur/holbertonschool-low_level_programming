@@ -25,7 +25,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		while (temp != NULL && papu < index - 1)
 		{
 			temp = temp->next;
-			papu++;;
+			papu++;
 		}
 		coso = temp->next;
 		temp->next = temp->next->next;
