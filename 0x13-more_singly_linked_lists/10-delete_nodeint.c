@@ -8,6 +8,8 @@
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
+	unsigned int papu;
+
 	listint_t *temp = *head;
 
 	listint_t *coso = NULL;
@@ -19,10 +21,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	if (index > 0)
 	{
-		while (temp != NULL && index > 0)
+		papu = 0;
+		while (temp != NULL && papu < index - 1)
 		{
 			temp = temp->next;
-			index--;
+			papu++;;
 		}
 		coso = temp->next;
 		temp->next = temp->next->next;
@@ -30,10 +33,8 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 	else if (index == 0)
 	{
-		coso = temp;
-		temp = temp->next;
-		*head = temp;
-		free(coso);
+		*head = temp->next;
+		free(temp);
 	}
 	return (1);
 }
