@@ -2,7 +2,7 @@
 
 /**
  * binary_to_uint - convert binary to Unsigned int
- *
+ * @b: input string
  * Return: unsigned int
  */
 unsigned int binary_to_uint(const char *b)
@@ -11,24 +11,26 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int num;
 
 	num = 0;
-	for (size = 0; b[size]; size++)
+	if (b)
 	{
-		if (b[size] != 48 && b[size] != 49)
+		for (size = 0; b[size]; size++)
 		{
-			b = NULL;
-			return (0);
+			if (b[size] != 48 && b[size] != 49)
+			{
+				return (0);
+			}
 		}
-	}
-	size--;
-	for (base = 1; b[size]; size--)
-	{
-		if ((b[size] - 48) == 1)
+		size--;
+		for (base = 1; b[size]; size--)
 		{
-			num = num + base;
+			if ((b[size] - 48) == 1)
+			{
+				num = num + base;
+			}
+			else
+				num = num + 0;
+			base = base << 1;
 		}
-		else
-			num = num + 0;
-		base = base << 1;
 	}
 	return (num);
 }
