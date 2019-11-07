@@ -15,11 +15,12 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[size] != 48 && b[size] != 49)
 		{
+			b = NULL;
 			return (0);
 		}
 	}
 	size--;
-	for (base = 1;b[size];size--)
+	for (base = 1; b[size]; size--)
 	{
 		if ((b[size] - 48) == 1)
 		{
