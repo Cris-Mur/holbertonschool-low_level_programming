@@ -30,12 +30,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename)
 	{
-		log = open(filename, O_CREAT | O_RDONLY);
-		if (log == -1)
+		log = open(filename, O_RDONLY);
+		if (log <= 1)
 			return (_ERR);
 
 		op = log;
-		buffersito = malloc(sizeof(char) * letters);
+		buffersito = malloc(sizeof(char) + letters);
 		if (buffersito == NULL)
 		{
 			return (_ERR);
@@ -44,13 +44,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (log == -1)
 			return (_ERR);
 		log = buflen(buffersito);
-		log = write(1, buffersito, log);
+		log++;
+		log = write(STDOUT_FILENO, buffersito, log);
 		if (log == -1)
 		{
 			free(buffersito);
 			return (_ERR);
 		}
-		return (close(op) == -1 ? -1 : log);
+		close(op);
+		free(buffersito);
+		return (log);
 	}
 	return (_ERR);
 }
