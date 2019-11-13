@@ -44,7 +44,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (log == -1)
 			return (_ERR);
 		log = buflen(buffersito);
-		log = write(STDOUT_FILENO, buffersito, log);
+		log = write(1, buffersito, log);
 		if (log == -1)
 		{
 			free(buffersito);
