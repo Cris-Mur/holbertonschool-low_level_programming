@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-#define _ERR 0
+#define _ERR -1
 /**
  * buflen - size of bufer
  * @str: input string
@@ -29,14 +29,18 @@ int create_file(const char *filename, char *text_content)
 	if (filename && text_content)
 	{
 		log = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
-			if (log <= 1)
-				return (_ERR);
 
-			wr = log;
+		if (log <= 1)
+			return (_ERR);
+
+		wr = log;
 		log = buflen(text_content);
 		wr = write(wr, text_content, log);
+		close(wr);
 		if (wr == log)
-			return (log);
+			return (1);
+		else
+			return (_ERR);
 	}
 	return (_ERR);
 }
