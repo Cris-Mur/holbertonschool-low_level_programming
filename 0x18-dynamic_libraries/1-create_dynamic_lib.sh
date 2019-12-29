@@ -2,5 +2,3 @@
 gcc -Wall -Werror -Wextra -pedantic -fPIC -c *.c
 gcc -shared -o liball.so *.o
 rm *.o
-mkdir c_files
-mv *.c c_files/
