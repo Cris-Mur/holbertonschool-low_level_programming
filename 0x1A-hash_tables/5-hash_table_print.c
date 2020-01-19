@@ -8,7 +8,6 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *row = NULL;
-	char *nodito = NULL;
 	size_t idx = 0;
 	int first = 0;
 
@@ -18,13 +17,13 @@ void hash_table_print(const hash_table_t *ht)
 		while (idx <= ht->size)
 		{
 			row = ht->array[idx];
-			if (row)
+			while (row)
 			{
 				if (first)
 					printf(", ");
-				nodito = hash_table_get(ht, row->key);
 				printf("\'%s\': \'%s\'",
-				       ht->array[idx]->key, nodito);
+				       ht->array[idx]->key, row->value);
+				row = row->next;
 				first = 1;
 			}
 			idx++;
