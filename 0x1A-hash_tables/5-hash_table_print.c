@@ -18,8 +18,7 @@ void hash_table_print(const hash_table_t *ht)
 		{
 			if (row &&
 			    idx < ht->size &&
-			    idx != 0 &&
-			    ht->array[idx + 1])
+			      idx != 0)
 			{
 				printf(", ");
 			}
