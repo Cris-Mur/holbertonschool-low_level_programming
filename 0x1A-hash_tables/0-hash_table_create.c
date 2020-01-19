@@ -24,9 +24,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(tablita);
 		return (NULL);
 	}
+	tablita->size = size;
 	for (index = 0; index < size; index++)
 		tablita->array[index] = NULL;
-
-	tablita->size = size;
 	return (tablita);
 }
