@@ -27,11 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			{
 				if (strcmp(key, row->key) == 0)
 				{
-					free(row->value);
-					row->value = strdup(element->value);
-					free(element->value);
-					free(element->key);
-					free(element);
+					same_key(element, row);
 					return (1);
 				}
 				row = row->next;
@@ -51,4 +47,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 	}
 	return (0);
+}
+
+/**
+ * same_key - function in case the key is same
+ * @row: input row
+ * @element: input element
+ * Return: void function
+ */
+
+void same_key(hash_node_t *element, hash_node_t *row)
+{
+	free(row->value);
+	row->value = strdup(element->value);
+	free(element->value);
+	free(element->key);
+	free(element);
 }
