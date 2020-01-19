@@ -1,14 +1,15 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_create - function that allocate a hash table
+ * hash_table_create - function that allocate a new tash table
  * @size: size of the table
  * Return: new hash table
  */
+
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *tablita = NULL;
-	size_t index = 0;
+	unsigned long int index = 0;
 
 	if (size > 0)
 	{
@@ -23,13 +24,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 			return (NULL);
 		}
 		for (index = 0; index < size; index++)
-		{
 			tablita->array[index] = NULL;
-		}
 
 		tablita->size = size;
-
 		return (tablita);
-	}
-	return (NULL);
 }
