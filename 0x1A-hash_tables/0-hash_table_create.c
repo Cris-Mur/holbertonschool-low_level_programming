@@ -7,14 +7,12 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *tablita;
-	size_t index;
-
-	tablita = NULL;
+	hash_table_t *tablita = NULL;
+	size_t index = 0;
 
 	if (size > 0)
 	{
-		tablita = malloc(sizeof(hash_table_t *));
+		tablita = malloc(sizeof(hash_table_t));
 		if (!tablita)
 			return (NULL);
 
