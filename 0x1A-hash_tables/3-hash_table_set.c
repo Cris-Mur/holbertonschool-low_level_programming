@@ -9,51 +9,41 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *element = NULL;
-	hash_node_t *row = NULL;
+	hash_node_t *element = NULL, *row = NULL;
 	unsigned long int index = 0;
 
-	if (ht)
+	if (ht && key)
 	{
-		if (key)
+		index = key_index((const unsigned char *)key, ht->size);
+		element = malloc(sizeof(hash_node_t));
+		if (!element)
+			return (0);
+		element->key = (char *)key;
+		element->value = strdup(value);
+		row = ht->array[index];
+		if (row)
 		{
-			index = key_index((const unsigned char*)key, ht->size);
-			element = malloc(sizeof(hash_node_t));
-			if (!element)
+			while (row)
 			{
-				return (0);
-			}
-			element->key = (char *)key;
-			element->value = strdup(value);
-			row = ht->array[index];
-			if (row)
-			{
-				while (row)
+				if (strcmp(key, row->key) == 0)
 				{
-					if (strcmp(key, row->key) == 0)
-					{
-						free(row->value);
-						row->value = strdup(
-							element->value);
-						free(element->value);
-						free(element);
-						return (1);
-					}
-					row = row->next;
-				}
-				if (row == NULL)
-				{
-					element->next = ht->array[index];
-					ht->array[index] = element;
+					row->value = strdup(element->value);
 					return (1);
 				}
+				row = row->next;
 			}
-			else
+			if (row == NULL)
 			{
-				element->next = NULL;
+				element->next = ht->array[index];
 				ht->array[index] = element;
 				return (1);
 			}
+		}
+		else
+		{
+			element->next = NULL;
+			ht->array[index] = element;
+			return (1);
 		}
 	}
 	return (0);
