@@ -18,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		element = malloc(sizeof(hash_node_t));
 		if (!element)
 			return (0);
-		element->key = (char *)key;
+		element->key = strdup(key);
 		element->value = strdup(value);
 		row = ht->array[index];
 		if (row)
@@ -29,6 +29,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				{
 					free(row->value);
 					row->value = strdup(element->value);
+					free(element->value);
+					free(element->key);
+					free(element);
 					return (1);
 				}
 				row = row->next;
