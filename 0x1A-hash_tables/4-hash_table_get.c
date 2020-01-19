@@ -9,23 +9,31 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *row = NULL;
+	char *str = NULL;
 	unsigned long int index = 0;
 
 	if (ht)
 	{
 		index = key_index((const unsigned char *)key, ht->size);
+		str = strdup(key);
+
 		if (ht->array[index])
 		{
 			row = ht->array[index];
 			while (row)
 			{
 				if (strcmp(row->key, key) == 0)
-					return (row->value);
+					break;
 				row = row->next;
 			}
+			free(str);
+
+			if (!row)
+			{
+				return (NULL);
+			}
+			return (row->value);
 		}
-		else
-			return (NULL);
 	}
 	return (NULL);
 }
