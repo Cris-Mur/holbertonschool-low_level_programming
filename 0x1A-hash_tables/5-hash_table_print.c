@@ -11,6 +11,9 @@ void hash_table_print(const hash_table_t *ht)
 	size_t idx = 0;
 	int first = 0;
 
+	if (!ht)
+		return;
+
 	if (ht)
 	{
 		printf("{");
@@ -30,5 +33,4 @@ void hash_table_print(const hash_table_t *ht)
 		}
 		printf("}\n");
 	}
-	return;
 }
