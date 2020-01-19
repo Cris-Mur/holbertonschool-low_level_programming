@@ -9,20 +9,26 @@ hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *tablita;
 
-	if (size < 0)
-	{
-		return (NULL);
-	}
+	tablita = NULL;
 
-	tablita = malloc(sizeof(hash_table_t));
-	if (!tablita)
+	if (size > 0)
 	{
-		return (NULL);
-	}
+		tablita = malloc(sizeof(hash_table_t));
+		if (!tablita)
+		{
+			return (NULL);
+		}
 
-	tablita->array = (hash_node_t**)calloc(size, size * sizeof(hash_node_t));
-	if (!tablita->array)
-	{
-		return (NULL);
+		tablita->array = (hash_node_t**)calloc(size, size * sizeof(hash_node_t));
+		if (!tablita->array)
+		{
+			free(tablita);
+			return (NULL);
+		}
+
+		tablita->size = size;
+
+		return (tablita);
 	}
+	return (NULL);
 }
