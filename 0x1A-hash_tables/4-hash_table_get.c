@@ -9,13 +9,13 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *row = NULL;
-	char *str = NULL;
+	/*char *str = NULL;/*me sobra esto*/
 	unsigned long int index = 0;
 
 	if (ht)
 	{
 		index = key_index((const unsigned char *)key, ht->size);
-		str = strdup(key);
+		/*str = strdup(key);/*me sobra esto*/
 
 		if (ht->array[index])
 		{
@@ -26,7 +26,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 					break;
 				row = row->next;
 			}
-			free(str);
+			/*free(str);/*me sobra esto*/
 
 			if (!row)
 			{
