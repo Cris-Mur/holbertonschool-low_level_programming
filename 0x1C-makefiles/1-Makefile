@@ -1,7 +1,4 @@
-# build an executable named holberton from holberton.c
-# The compiler: gcc for c programs.
 CC = gcc
-# The source files
 SRC = main.c holberton.c
 
 all: $(SRC)
