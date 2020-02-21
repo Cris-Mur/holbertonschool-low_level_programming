@@ -8,13 +8,12 @@ all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *~ holberton
-
-fclean:
 	$(RM) *~ $(NAME)
-	$(RM) $(OBJ)
 
 oclean:
 	$(RM) $(OBJ)
+
+fclean:
+	$(RM) *~ $(NAME) $(OBJ)
 
 re: oclean all
