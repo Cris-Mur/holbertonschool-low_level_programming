@@ -6,16 +6,34 @@
  */
 int main(void)
 {
-	long double n1, n2, aux, cnt;
+	unsigned long n1, n2, aux, cnt;
+	unsigned long c1, c2, d1, d2, t1, t2;
 
-	n1 = 0;
-	n2 = 1;
-	for (cnt = 0; cnt < 98; cnt++)
+	n1 = 1;
+	n2 = 2;
+	printf("%lu, %lu, ", n1, n2);
+	for (cnt = 2; cnt <= 90; cnt++)
 	{
 		aux = n2;
 		n2 = n2 + n1;
 		n1 = aux;
-		scanf("%Lf", &n2);
+		printf("%lu, ", n2);
+	}
+	c1 = n1 / 1000;
+	d1 = n1 % 1000;
+	c2 = n2 / 1000;
+	d2 = n2 % 1000;
+	for (; cnt <= 96; cnt++)
+	{
+		t1 = c1 + c2;
+		t2 = d1 + d2;
+		t1 += t2 / 1000;
+		t2 %= 1000;
+		printf(cnt == 96 ? "%lu%03lu\n" : "%lu%03lu, ", t1, t2);
+		c1 = c2;
+		c2 = t1;
+		d1 = d2;
+		d2 = t2;
 	}
 	return (0);
 }
