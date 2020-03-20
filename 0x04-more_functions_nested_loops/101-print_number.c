@@ -14,11 +14,6 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar(45);
-		if (n < 10)
-		{
-			_putchar((n * -1) + 48);
-			return;
-		}
 	}
 	if (!n)
 	{
@@ -26,7 +21,14 @@ void print_number(int n)
 		return;
 	}
 	if (n < 0)
+	{
 		n *= -1;
+		if (n < 10)
+		{
+			_putchar((n) + 48);
+			return;
+		}
+	}
 	while (n < 0 ? (((unsigned)n / mod) > 9) : (n / mod > 9))
 		mod = mod * 10;
 	while (mod >= 1)
