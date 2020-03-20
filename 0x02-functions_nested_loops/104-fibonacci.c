@@ -23,13 +23,13 @@ int main(void)
 	d1 = n1 % 1000;
 	c2 = n2 / 1000;
 	d2 = n2 % 1000;
-	for (; cnt <= 96; cnt++)
+	for (; cnt <= 97; cnt++)
 	{
 		t1 = c1 + c2;
 		t2 = d1 + d2;
 		t1 += t2 / 1000;
 		t2 %= 1000;
-		printf(cnt == 96 ? "%lu%03lu\n" : "%lu%03lu, ", t1, t2);
+		printf(cnt == 97 ? "%lu%03lu\n" : "%lu%03lu, ", t1, t2);
 		c1 = c2;
 		c2 = t1;
 		d1 = d2;
