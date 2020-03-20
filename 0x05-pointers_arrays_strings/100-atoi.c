@@ -8,25 +8,20 @@
 
 int _atoi(char *s)
 {
-	int sign, n, cn;
-
-	cn = 0;
+	int sign, n;
+	
 	n = 0;
-	sign = 0;
+	sign = 1;
 	while (s != 00 && *s != '\00' && *s != '\n')
 	{
-		sign = *(s - (cn + 1)) == 45 ? -1 : 1;
-		while (*(s) >= 48 && *(s) <= 57)
+		sign *= *s == 45 ? -1 : 1;
+		if (*(s) >= 48 && *(s) <= 57)
 		{
-			cn++;
-			if (cn > 1)
-			{
+			n = n + (*s - 48);
+			if (*(s + 1) >= 48 && *(s + 1) <= 57)
 				n = n * 10;
-				n = n + (*s - 48);
-			}
 			else
-				n = *s - 48;
-			s += *s != '\00' ? 1 : 0;
+				break;
 		}
 		s += *s != '\00' ? 1 : 0;
 	}
