@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <limits.h>
 /**
  * print_number - print n number
  * @n: input integer
@@ -13,30 +14,14 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar(45);
-		n = n * -1;
-		if (n < 10)
-		{
-			_putchar(n + 48);
-			return;
-		}
 	}
-	else if (n == 0)
-	{
-		_putchar(48);
-		return;
-	}
-	else if (n < 10)
-	{
-		_putchar(n + 48);
-		return;
-	}
-	while (n / mod > 9)
-	{
+	if (n < 0)
+		n *= -1;
+	while (n < 0 ? (((unsigned)n / mod) > 9) : (n / mod > 9))
 		mod = mod * 10;
-	}
 	while (mod >= 1)
 	{
-		_putchar((n / mod) + 48);
+		_putchar(n < 0 ? (((n / mod)* -1) + 48) : ((n / mod) + 48));
 		n = n % mod;
 		mod = mod / 10;
 	}
