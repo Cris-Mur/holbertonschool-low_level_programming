@@ -13,13 +13,10 @@ int _atoi(char *s)
 	cn = 0;
 	n = 0;
 	sign = 0;
-	while (s != 00)
+	while (s != 00 && *s != '\00' && *s != '\n')
 	{
-		if (*s == 45)
-		{
-			sign = -1;
-		}
-		while (*(s + 1) >= 48 && *(s + 1) <= 57)
+		sign = *(s - (cn + 1)) == 45 ? -1 : 1;
+		while (*(s) >= 48 && *(s) <= 57)
 		{
 			cn++;
 			if (cn > 1)
@@ -29,9 +26,9 @@ int _atoi(char *s)
 			}
 			else
 				n = *s - 48;
-			s++;
+			s += *s != '\00' ? 1 : 0;
 		}
-		s++;
+		s += *s != '\00' ? 1 : 0;
 	}
 	if (sign == -1)
 	{
