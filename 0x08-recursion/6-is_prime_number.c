@@ -20,7 +20,7 @@ int is_prime_number(int n)
 
 /**
  * prime - test if n is a prime number
- * @n intput integer
+ * @n: intput integer
  * @mod: test of prime number
  * Return: always 1 (success)
  */
