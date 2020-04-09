@@ -1,23 +1,10 @@
 #include "holberton.h"
-
-int pal(int, char*);
-int size(char*);
-
 /**
- * is_palindrome - test if string is palindrome
- * @s: input string
- * Return: always 1 (success)
+ * pal - check if the number is palindrome
+ * @siz: size of the number
+ * @s: input string number
+ * Return: 1 if yes 0 if not
  */
-
-int is_palindrome(char *s)
-{
-	int z;
-
-	z = size(s);
-
-	return (pal(z, s));
-}
-
 int pal(int siz, char *s)
 {
 	if (siz <= 0)
@@ -35,6 +22,11 @@ int pal(int siz, char *s)
 	}
 }
 
+/**
+ * size - count the number size
+ * @s: input string number
+ * Return: size of the number
+ */
 int size(char *s)
 {
 	if (*s != 00)
@@ -43,4 +35,19 @@ int size(char *s)
 	}
 	else
 		return (0);
+}
+
+/**
+ * is_palindrome - test if string is palindrome
+ * @s: input string
+ * Return: always 1 (success)
+ */
+
+int is_palindrome(char *s)
+{
+	int z;
+
+	z = size(s);
+
+	return (pal(z, s));
 }
