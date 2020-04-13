@@ -4,7 +4,7 @@
 /**
  * _len - lenght of a string
  * @str: input string
- * Return size of string
+ * Return: size of string
  */
 size_t _len(char *str)
 {
@@ -18,6 +18,7 @@ size_t _len(char *str)
 /**
  * _strdup - duplicate a str in heap memory
  * @str: input string
+ * @sz: input size of the string
  * Return: duplicated string
  */
 char *_strdup(char *str, size_t sz)
