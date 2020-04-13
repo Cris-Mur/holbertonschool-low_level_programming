@@ -1,38 +1,34 @@
 #include "holberton.h"
 
 /**
- * argstostr -
+ * argstostr - concatenate argument vector with new lines
  * @ac: argument counter
  * @av: argument vector
  * Return: av string
  */
 char *argstostr(int ac, char **av)
 {
-	int i, a, j, k;
-	char *new;
+	size_t sz = 0, x, y, s = 0;
+	char *av_c = NULL;
 
-	a = ac;
-
-	if (av != 00)
+	if (ac != 0 && av)
 	{
-		for (i = 0; av[i] && a > 0; i++)
+		for (y = 0; y < (size_t)ac; y++)
+			for (x = 0; av[y][x]; x++)
+				sz++;
+		sz += (ac - 1);
+		av_c = malloc(sz*(sizeof(char)));
+		if (!av_c)
+			return (NULL);
+		for (y = 0; y < (size_t)ac && s < sz; y++, s++)
 		{
-			for (j = 0; av[i][j] && a > 0; j++)
+			for (x = 0; av[y][x] && s < sz; x++, s++)
 			{
-				if (av[i][j + 1] == 00)
-				{
-					j++;
-					av[i][j] = 10;
-					a--;
-				}
+				av_c[s] = av[y][x];
 			}
+			av_c[s] = '\n';
 		}
-
-		new = malloc(sizeof(char *) * j);
-		for (k = 0; k < j; k++)
-			new[k] = av[0][k];
+		return (av_c);
 	}
-	else
-		new = av;
-	return (new);
+	return (NULL);
 }
