@@ -24,7 +24,7 @@ int pal(int siz, char *s)
 }
 
 /**
- * size - count the number size
+ * _size - count the number size
  * @s: input string number
  * Return: size of the number
  */
