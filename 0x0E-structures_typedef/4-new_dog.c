@@ -2,24 +2,37 @@
 #include <string.h>
 
 /**
+ * _len - lenght of a string
+ * @str: input string
+ * Return size of string
+ */
+size_t _len(char *str)
+{
+	size_t sz = 0;
+
+	while (str[sz])
+		sz++;
+	return (sz);
+}
+
+/**
  * _strdup - duplicate a str in heap memory
  * @str: input string
  * Return: duplicated string
  */
-char *_strdup(char *str)
+char *_strdup(char *str, size_t sz)
 {
-	size_t sz = 0, x;
+	size_t x;
 	char *dup = NULL;
-	while (str[sz])
-		sz++;
-	dup = malloc(sz * (sizeof(char)));
+
+	dup = malloc((sz + 1) * (sizeof(char)));
 	if (!dup)
 		return (NULL);
+
 	for (x = 0; x < sz; x++)
 		dup[x] = str[x];
 	return (dup);
 }
-
 
 /**
  * new_dog - funtion that create
@@ -31,14 +44,27 @@ char *_strdup(char *str)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	size_t sz = 0;
 	dog_t *doge;
 
-	doge = malloc(sizeof(dog_t));
+	sz = sizeof(dog_t);
+	doge = malloc(sz);
 	if (!doge)
 		return (NULL);
 
-	doge->name = _strdup(name);
-	doge->owner = _strdup(owner);
+	doge->name = _strdup(name, _len(name));
+	if (!doge->name)
+	{
+		free(doge);
+		return (NULL);
+	}
+	doge->owner = _strdup(owner, _len(owner));
+	if (!doge->owner)
+	{
+		free(doge->name);
+		free(doge);
+		return (NULL);
+	}
 	doge->age = age;
 	return (doge);
 
