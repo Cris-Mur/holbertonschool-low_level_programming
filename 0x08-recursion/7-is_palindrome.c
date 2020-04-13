@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * pal - check if the number is palindrome
  * @siz: size of the number
@@ -15,7 +16,7 @@ int pal(int siz, char *s)
 	{
 		if (*s == *(s + siz))
 		{
-			return (pal(siz - 1, s + 2));
+			return (pal(siz - 2, s + 1));
 		}
 		else
 			return (0);
@@ -27,11 +28,11 @@ int pal(int siz, char *s)
  * @s: input string number
  * Return: size of the number
  */
-int size(char *s)
+int _size(char *s)
 {
 	if (*s != 00)
 	{
-		return (1 + size(s + 1));
+		return (1 + _size(s + 1));
 	}
 	else
 		return (0);
@@ -47,7 +48,7 @@ int is_palindrome(char *s)
 {
 	int z;
 
-	z = size(s);
+	z = _size(s);
 
-	return (pal(z, s));
+	return (pal((z - 1), s));
 }
