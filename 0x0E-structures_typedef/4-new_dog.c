@@ -39,20 +39,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (name && owner)
 	{
-		doge = malloc(sizeof(dog_t));
-		if (!doge)
-			return (NULL);
 		n = _strdup(name);
 		if (!n)
-		{
-			free(doge);
 			return (NULL);
-		}
 		o = _strdup(owner);
 		if (!o)
 		{
 			free(n);
-			free(doge);
+			return (NULL);
+		}
+		doge = malloc(sizeof(dog_t));
+		if (!doge)
+		{
+			free (n);
+			free (o);
 			return (NULL);
 		}
 		doge->age = age;
