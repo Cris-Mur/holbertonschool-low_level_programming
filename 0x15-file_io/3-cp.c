@@ -74,7 +74,7 @@ void _ofs(char *file_src, char *file_to)
 	if (log_f1 == -1 || log_f2 == -1)
 	{
 		dprintf(2, "Error: Can't close fd %lu\n",
-			log_f1 == -1? op1 : op2);
+			log_f1 == -1 ? op1 : op2);
 		exit(100);
 	}
 }
@@ -85,12 +85,15 @@ void _ofs(char *file_src, char *file_to)
  * @buffer: input buffer of data
  * @op1: input file descriptor for file A
  * @op2: input file descriptor for file B
+ * @file_src: input name of the file source
+ * @file_to: input name of the file dest
  * Return: void
  */
 
 void _cp(char *buffer, ssize_t op1, ssize_t op2, char *file_src, char *file_to)
 {
 	ssize_t log_f1, log_f2;
+
 	while (1)
 	{
 		log_f1 = read(op1, buffer, 1024);
