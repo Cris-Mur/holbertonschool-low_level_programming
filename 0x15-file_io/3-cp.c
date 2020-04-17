@@ -63,8 +63,8 @@ void _ofs(char *file_src, char *file_to)
 	log_f2 = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (log_f2 <= 1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file_to);
-		close(op1), free(buffer), exit(98);
+		dprintf(2, "Error: Can't write to %s\n", file_to);
+		close(op1), free(buffer), exit(99);
 	}
 	op2 = log_f2;
 
