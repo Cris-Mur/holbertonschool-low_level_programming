@@ -55,7 +55,8 @@ void _ofs(char *file_src, char *file_to)
 	log_f1 = open(file_src, O_RDONLY);
 	if (log_f1 <= 1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file_src);
+		dprintf(STDERR_FILENO,
+			"Error: Can't read from file %s\n", file_src);
 		free(buffer), exit(98);
 	}
 	op1 = log_f1;
