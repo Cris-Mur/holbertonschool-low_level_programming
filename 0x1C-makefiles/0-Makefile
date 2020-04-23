@@ -1,5 +1,0 @@
-# build an executable named holberton from holberton.c
-all: holberton.c
-	gcc main.c holberton.c -o holberton
-clean:
-	$(RM) holberton
