@@ -9,17 +9,21 @@
 size_t print_dlistint(const dlistint_t *h)
 {
 	size_t size;
-	const dlistint_t *head = h;
+	const dlistint_t *head = NULL;
 
 	size = 0;
 
-	if (h->prev == NULL && h != NULL)
+	if (h)
 	{
-		while (head != NULL)
+		head = h;
+		if (h->prev == NULL && h != NULL)
 		{
-			printf("%d\n", head->n);
-			head = head->next;
-			size++;
+			while (head != NULL)
+			{
+				printf("%d\n", head->n);
+				head = head->next;
+				size++;
+			}
 		}
 	}
 	return (size);
