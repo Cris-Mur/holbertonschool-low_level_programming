@@ -36,17 +36,22 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			}
 			gansito++;
 		}
-		teemoNXT = temp->next;
-		new->next = teemoNXT;
-		temp->next = new;
-		teemoNXT->prev = new;
-		new->prev = temp;
+		if (temp->next)
+		{
+			teemoNXT = temp->next;
+			new->next = teemoNXT;
+			temp->next = new;
+			teemoNXT->prev = new;
+			new->prev = temp;
+		}
+		else
+		{
+			return (add_dnodeint_end(h, n));
+		}
 	}
 	else
 	{
-		new->next = *h;
-		temp->prev = new;
-		*h = new;
+		return (add_dnodeint(h, n));
 	}
 	return (new);
 }
