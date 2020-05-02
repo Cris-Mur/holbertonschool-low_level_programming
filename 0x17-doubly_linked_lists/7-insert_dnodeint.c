@@ -11,10 +11,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new;
 	unsigned int gansito;
-	dlistint_t *temp = *h;
-	dlistint_t *teemoNXT = *h;
+	dlistint_t *temp = NULL;
+	dlistint_t *teemoNXT = NULL;
 
-	if (!h)
+	if (!h || !*h)
 		return (NULL);
 
 	new = malloc(sizeof(dlistint_t));
@@ -25,6 +25,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (idx != 0)
 	{
+		temp = *h;
 		gansito = 0;
 		while (gansito < idx - 1)
 		{
@@ -46,11 +47,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		}
 		else
 		{
+			free(new);
 			return (add_dnodeint_end(h, n));
 		}
 	}
 	else
 	{
+		free(new);
 		return (add_dnodeint(h, n));
 	}
 	return (new);
