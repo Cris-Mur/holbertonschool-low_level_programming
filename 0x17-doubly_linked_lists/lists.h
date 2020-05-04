@@ -35,4 +35,10 @@ int sum_dlistint(dlistint_t *head);
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 
+/*8-delete*/
+int del_head(dlistint_t **h);
+int del_end(dlistint_t **h);
+int del_middle(dlistint_t *nxt, dlistint_t *node, dlistint_t *prv)
+/*---*/
+
 #endif /* LISTS_H */
