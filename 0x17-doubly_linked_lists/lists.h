@@ -38,7 +38,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 /*8-delete*/
 int del_head(dlistint_t **h);
 int del_end(dlistint_t **h);
-int del_middle(dlistint_t *nxt, dlistint_t *node, dlistint_t *prv)
+int del_middle(dlistint_t *nxt, dlistint_t *node, dlistint_t *prv);
 /*---*/
 
 #endif /* LISTS_H */
