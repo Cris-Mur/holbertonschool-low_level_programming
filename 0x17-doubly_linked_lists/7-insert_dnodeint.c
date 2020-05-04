@@ -51,7 +51,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			gansito++;
 		}
 		if (temp->next)
+		{
 			return (put_mid(temp->next, new, temp));
+		}
 		else
 		{
 			free(new);
