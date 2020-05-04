@@ -1,6 +1,21 @@
 #include "lists.h"
 
 /**
+ * free_dlist - free all list
+ * @head: input doubly linked list
+ * Return: void
+ */
+void free_dlist(dlistint_t *head)
+{
+	if (head != NULL)
+	{
+		free_dlist(head->next);
+		free(head);
+	}
+}
+
+
+/**
  * del_head - delete tail of the list
  * @h: input doubly linked list
  * Return: (1) if success, (-1) if fail
@@ -19,7 +34,7 @@ int del_head(dlistint_t **h)
 	}
 	else
 	{
-		free_dlistint(*h);
+		free_dlist(*h);
 		*h = NULL;
 		h = NULL;
 		return (1);
