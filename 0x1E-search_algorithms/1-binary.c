@@ -2,7 +2,8 @@
 
 /**
  * pr_arr - print integer array to n
-
+ * @arr: imput array
+ * @n: limit into array
  */
 void pr_arr(int *arr, size_t n)
 {
@@ -41,10 +42,10 @@ int binary_search(int *array, size_t size, int value)
 	pr_arr(array, size);
 	while (l < r)
 	{
-		mid = (l+r)/2;
+		mid = (l + r) / 2;
 		if (array[mid] < value)
 		{
-			pr_arr(&array[mid + 1], (r - mid) );
+			pr_arr(&array[mid + 1], (r - mid));
 			l = mid + 1;
 		}
 		else if (array[mid] > value)
