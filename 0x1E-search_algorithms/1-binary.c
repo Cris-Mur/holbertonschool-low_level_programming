@@ -14,7 +14,7 @@ void pr_arr(int *arr, size_t n)
 
 	x = 0;
 	printf("Searching in array: ");
-	while (x < n)
+	while (x < n - 1)
 	{
 		printf("%d, ", arr[x]);
 		x++;
