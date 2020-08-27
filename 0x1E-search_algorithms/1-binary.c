@@ -50,7 +50,7 @@ int binary_search(int *array, size_t size, int value)
 		}
 		else
 		{
-			pr_arr(&array[l], (r - mid));
+			pr_arr(&array[l], (r - mid) - 1);
 			r = mid - 1;
 		}
 	}
